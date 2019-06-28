@@ -365,7 +365,7 @@ curl --header "Content-Type:application/json" -s -XPUT "localhost:9200/test_inde
 '
 
 curl --header "Content-Type:application/json" -s -XPUT "localhost:9200/test_index/_doc/2" -d '
-{"field1" : "foo bar bar", "field2" : "foo|0 bar|1 bar|3"}
+{"field1" : "foo bar bar", "field2" : "foo|0 bar|1 bar|2"}
 '
 
 curl --header "Content-Type:application/json" -s -XPUT "localhost:9200/test_index/_doc/3" -d '
@@ -419,7 +419,7 @@ curl --header "Content-Type:application/json" -s "localhost:9200/test_index/_sea
         "_score" : 1.0,
         "_source" : {
           "field1" : "foo bar bar",
-          "field2" : "foo|0 bar|1 bar|3"
+          "field2" : "foo|0 bar|1 bar|2"
         }
       },
       {
@@ -481,7 +481,7 @@ Note, that explanation is part of Lucene API and doc mentioned in explanation is
   "_score": 1,
   "_source": {
     "field1": "foo bar bar",
-    "field2": "foo|0 bar|1 bar|3"
+    "field2": "foo|0 bar|1 bar|2"
   },
   "_explanation": {
     "value": 1,
